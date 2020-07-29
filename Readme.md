@@ -1,7 +1,7 @@
 # Личный проект «Менеджер задач» [![Build status][travis-image]][travis-url]
 
 * Студент: [Сергей Леонов](https://up.htmlacademy.ru/ecmascript/12/user/320725).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Леонов](https://up.htmlacademy.ru/ecmascript/12/user/320725).
 
 ---
 
