@@ -1,5 +1,3 @@
-'use strict';
-
 const mainContainer = document.querySelector(`.main`);
 const mainControlContainer = mainContainer.querySelector(`.main__control`);
 
