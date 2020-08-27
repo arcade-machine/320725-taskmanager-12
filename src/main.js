@@ -7,6 +7,9 @@ import {cardEditMarkup} from "./view/cardEdit";
 import {cardMarkup} from "./view/card";
 import {loadMoreMarkup} from "./view/loadMore";
 
+import {cardMock, getRandomArrayItem} from "./mocks/task";
+
+const cards = [];
 const mainContainer = document.querySelector(`.main`);
 const mainControlContainer = mainContainer.querySelector(`.main__control`);
 
@@ -16,6 +19,14 @@ function renderTemplate(container, template, where = `beforeend`, timesToRender 
     fragment += template;
   }
   container.insertAdjacentHTML(where, fragment);
+}
+
+let i = 0;
+while (i < 15) {
+  cards.push(
+      cardMock()
+  );
+  i++;
 }
 
 renderTemplate(mainControlContainer, menuMarkup());
@@ -29,6 +40,12 @@ renderTemplate(boardContainer, boardTaskMarkup());
 
 const boardTaskContainer = document.querySelector(`.board__tasks`);
 
-renderTemplate(boardTaskContainer, cardEditMarkup());
-renderTemplate(boardTaskContainer, cardMarkup(), `beforeend`, 3);
+renderTemplate(boardTaskContainer, cardEditMarkup(
+    getRandomArrayItem(cards)
+));
+for (let a = 0; a < 4; a++) {
+  renderTemplate(boardTaskContainer, cardMarkup(
+      getRandomArrayItem(cards)
+  ), `beforeend`);
+}
 renderTemplate(boardContainer, loadMoreMarkup());
